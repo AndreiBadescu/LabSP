@@ -3,43 +3,35 @@ import java.util.List;
 
 public class Book {
     private String title;
-    private List<Paragraph> paragraphList;
-    private List<Image> imageList;
-    private List<Table> tableList;
+    private TableOfContents tableOfContents;
+    private Author author;
+    private List<Chapter> chapterList = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
-        paragraphList = new ArrayList<>();
-        imageList = new ArrayList<>();
-        tableList = new ArrayList<>();
     }
 
-    public void createNewParagraph(String name) {
-        Paragraph paragraph = new Paragraph(name);
-        paragraphList.add(paragraph);
+    public void addAuthor(Author author) {
+        this.author = author;
     }
 
-    public void createNewImage(String name) {
-        Image image = new Image(name);
-        imageList.add(image);
+    public int createChapter(String name) {
+        Chapter chapter = new Chapter(name);
+        chapterList.add(chapter);
+        return chapterList.size() - 1;
     }
 
-    public void createNewTable(String name) {
-        Table table = new Table(name);
-        tableList.add(table);
-    }
-
-    public void print() {
-        System.out.println(this);
+    public Chapter getChapter(int index) {
+        return chapterList.get(index);
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "title='" + title + '\'' +
-                ", paragraphList=" + paragraphList +
-                ", imageList=" + imageList +
-                ", tableList=" + tableList +
+                ", tableOfContents=" + tableOfContents +
+                ", author=" + author +
+                ", chapterList=" + chapterList +
                 '}';
     }
 }

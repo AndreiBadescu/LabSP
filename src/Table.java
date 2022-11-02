@@ -1,14 +1,26 @@
-public class Table {
-    private String name;
+public class Table implements Element {
+    private String title;
 
-    public Table(String name) {
-        this.name = name;
+    public Table(String title) {
+        this.title = title;
+    }
+
+    public void print() {
+        System.out.println("Table with Title: "+title);
     }
 
     @Override
-    public String toString() {
-        return "Table{" +
-                "name='" + name + '\'' +
-                '}';
+    public void add(Element e) {
+
+    }
+
+    @Override
+    public void remove(Element e) {
+
+    }
+
+    @Override
+    public Element get(int e) {
+        return null;
     }
 }

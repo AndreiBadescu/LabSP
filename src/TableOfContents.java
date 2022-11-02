@@ -1,14 +1,20 @@
-public class TableOfContents {
-    private String content;
-
-    public TableOfContents(String content) {
-        this.content = content;
+public class TableOfContents implements Element {
+    public void print() {
+        System.out.println("TableOfContents");
     }
 
     @Override
-    public String toString() {
-        return "TableOfContents{" +
-                "content='" + content + '\'' +
-                '}';
+    public void add(Element e) {
+
+    }
+
+    @Override
+    public void remove(Element e) {
+
+    }
+
+    @Override
+    public Element get(int e) {
+        return null;
     }
 }

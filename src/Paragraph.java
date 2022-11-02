@@ -1,14 +1,26 @@
-public class Paragraph {
-    private String name;
+public class Paragraph implements Element {
+    private String text;
 
-    public Paragraph(String name) {
-        this.name = name;
+    public Paragraph(String text) {
+        this.text = text;
+    }
+
+    public void print() {
+        System.out.println("Pharagraph: "+text);
     }
 
     @Override
-    public String toString() {
-        return "Paragraph{" +
-                "name='" + name + '\'' +
-                '}';
+    public void add(Element e) {
+
+    }
+
+    @Override
+    public void remove(Element e) {
+
+    }
+
+    @Override
+    public Element get(int e) {
+        return null;
     }
 }

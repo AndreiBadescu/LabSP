@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element{
+public class Section implements Element {
     List<Element> elements;
     String title;
 
@@ -13,7 +13,7 @@ public class Section implements Element{
     @Override
     public void print() {
         System.out.println(title);
-        for(Element e : elements) {
+        for (Element e : elements) {
             e.print();
         }
     }
@@ -31,5 +31,15 @@ public class Section implements Element{
     @Override
     public Element get(int e) {
         return elements.get(e);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        elements.forEach(e -> e.accept(visitor));
+    }
+
+    @Override
+    public String getData() {
+        return this.title;
     }
 }
